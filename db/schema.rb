@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_14_011300) do
+ActiveRecord::Schema.define(version: 2021_10_18_180523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "adventures", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "character_name"
+    t.string "choice_1"
+    t.string "choice_2"
+    t.string "choice_3"
+    t.string "choice_4"
+    t.string "choice_5"
+    t.boolean "adventure_status"
+    t.string "last_words"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "pet_class"
+    t.string "pet_image"
+    t.string "pet_accessory_class"
+    t.string "pet_accessory_image"
+    t.string "background_image"
+    t.string "pet_name"
+    t.string "pet_message"
+    t.string "pet_food_class"
+    t.string "pet_food_image"
+    t.string "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.integer "score"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
