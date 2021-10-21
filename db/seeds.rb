@@ -14,11 +14,7 @@ user2 = User.create(username: "gamegirl2112", password: "gamegirlpassword", bio:
 puts
 puts "Creating pets..."
 
-pet1 = Pet.create(pet_class: "tiger", pet_image: "image url example", pet_accessory_class: "glasses", pet_accessory_image: "image url example", background_image: "image url example", 
-pet_name: "bobby", pet_message: "I'm Bobby", pet_food_class: "fries", pet_food_image: "image url example", user_id: user1.id)
 
-pet2 = Pet.create(pet_class: "tiger", pet_image: "image url example", pet_accessory_class: "glasses", pet_accessory_image: "image url example", background_image: "image url example", 
-pet_name: "reggie", pet_message: "I'm reggie", pet_food_class: "fries", pet_food_image: "image url example", user_id: user1.id)
 
 puts 
 puts "Creating scores..."

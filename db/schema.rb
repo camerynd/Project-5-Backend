@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_18_180523) do
+ActiveRecord::Schema.define(version: 2021_10_21_003459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,16 +32,15 @@ ActiveRecord::Schema.define(version: 2021_10_18_180523) do
   create_table "pets", force: :cascade do |t|
     t.string "pet_class"
     t.string "pet_image"
-    t.string "pet_accessory_class"
-    t.string "pet_accessory_image"
-    t.string "background_image"
     t.string "pet_name"
     t.string "pet_message"
-    t.string "pet_food_class"
-    t.string "pet_food_image"
     t.string "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "accessory_1"
+    t.string "accessory_2"
+    t.string "accessory_3"
+    t.string "accessory_4"
   end
 
   create_table "scores", force: :cascade do |t|
