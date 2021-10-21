@@ -18,10 +18,10 @@ class PetsController < ApplicationController
     end
 
     def create
-        pet = Pet.create!(pet_class: params[:pet_class], pet_image: params[:pet_image], pet_accessory_class: params[:pet_accessory_class], 
-        pet_accessory_image: params[:pet_accessory_image], background_image: params[:background_image], pet_name: params[:pet_name], 
-        pet_message: params[:pet_message], pet_food_class: params[:pet_food_class], pet_food_image: params[:pet_food_image], user_id: params[:user_id])
-        render json: adventure, status: :created
+        pet = Pet.create!(pet_class: params[:pet_class], pet_name: params[:pet_name], pet_message: params[:pet_message],
+        pet_image: params[:pet_image], accessory_1: params[:accessory_1], accessory_2: params[:accessory_2],
+        accessory_3: params[:accessory_3], accessory_4: params[:accessory_4], user_id: params[:user_id])
+        render json: pet, status: :created
         rescue ActiveRecord::RecordInvalid => e
             render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
     end 
