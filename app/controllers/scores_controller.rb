@@ -1,5 +1,5 @@
 class ScoresController < ApplicationController
-    skip_before_action :authorized, only: [:high_scores]
+    skip_before_action :authorized, only: [:high_scores, :create]
 
     def high_scores
         high_scores = Score.highest_score
