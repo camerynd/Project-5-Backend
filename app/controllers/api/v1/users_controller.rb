@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create, :update]
 
     def profile
       render json: { user: UserSerializer.new(current_user) }, status: :accepted
@@ -15,15 +15,15 @@ class Api::V1::UsersController < ApplicationController
       end
     end
 
-    # def update
-    #   user = User.find_by(id: params[:id])
-    #   if user
-    #     user.update(user_params)
-    #     render json: user
-    #   else
-    #     render json: { error: "User not found" }, status: :not_found
-    #   end
-    # end
+    def update
+      user = User.find_by(id: params[:id])
+      if user
+        user.update(username: params[:username], bio: params[:bio], avatar: params[:avatar])
+        render json: user
+      else
+        render json: { error: "User not found" }, status: :not_found
+      end
+    end
   
     private
   
